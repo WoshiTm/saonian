@@ -2,7 +2,7 @@
 /*
 图卡壁纸
 [rewrite_local]
-https://smallatom.xyz/bz/img006/periodList url script-response-body TKBZ.js
+https://smallatom.xyz/bz/img006/periodList url script-response-body https://raw.githubusercontent.com/WoshiTm/saonian/refs/heads/main/TKBZ.js
 
 [mitm]
 hostname = smallatom.xyz
