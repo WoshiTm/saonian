@@ -14,14 +14,6 @@ const appConfig = {
   "tabLibrary": {
     "name": "探索",
     "groups": [{
-        "name": "推荐",
-        "type": "album",
-        "ui": 0,
-        "showMore": true,
-        "ext": {
-            "gid": '2'
-        }
-    }, {
       "name": "播客",
       "type": "playlist",
       "ui": 1,
