@@ -1,29 +1,22 @@
-
 const $config = argsify($config_str)
 const cheerio = createCheerio()
+const CryptoJS = createCryptoJS()
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
 const headers = {
   'User-Agent': UA,
-  'Referer': 'https://www.bilibili.com/'
+  'Referer': 'https://www.bilibili.com/',
+  'Origin': 'https://www.bilibili.com'
 }
 
 const appConfig = {
   "ver": 1,
-  "name": "bilibili",
+  "name": "bilibili音乐",
   "message": "",
   "warning": "",
   "desc": "",
   "tabLibrary": {
     "name": "探索",
     "groups": [{
-        "name": "推荐",
-        "type": "song",
-        "ui": 0,
-        "showMore": false,
-        "ext": {
-            "gid": '1'
-        }
-    }, {
       "name": "VOCALOID·UTAU",
       "type": "song",
       "ui": 0,
@@ -111,7 +104,7 @@ async function getSongs(ext) {
         list: [],
       })
     }
-    const { data } = await $fetch.get('https://www.bilibili.com/v/music/?spm_id_from=333.1007.0.0', {
+    const { data } = await $fetch.get('https://www.bilibili.com/v/music/', {
       headers
     })
     // $print(`***data: ${data}`)
@@ -298,6 +291,61 @@ async function getAlbums(ext) {
   })
 }
 
+const mixinKeyEncTab = [
+  46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35, 27, 43, 5, 49,
+  33, 9, 42, 19, 29, 28, 14, 39, 12, 38, 41, 13, 37, 48, 7, 16, 24, 55, 40,
+  61, 26, 17, 0, 1, 60, 51, 30, 4, 22, 25, 54, 21, 56, 59, 6, 63, 57, 62, 11,
+  36, 20, 34, 44, 52
+]
+
+// 对 imgKey 和 subKey 进行字符顺序打乱编码
+function getMixinKey(orig) {
+  let temp = ''
+  mixinKeyEncTab.forEach((n) => {
+    temp += orig[n]
+  })
+  return temp.slice(0, 32)
+}
+
+// 为请求参数进行 wbi 签名
+function encWbi(params, imgKey, subKey) {
+  const mixinKey = getMixinKey(imgKey + subKey)
+  const currTime = Math.round(Date.now() / 1000)
+  const chrFilter = /[!'()*]/g
+  let query = []
+  Object.assign(params, { wts: currTime }) // 添加 wts 字段
+  // 按照 key 重排参数
+  Object.keys(params).sort().forEach((key) => {
+    query.push(
+        `${encodeURIComponent(key)}=${encodeURIComponent(
+            // 过滤 value 中的 "!'()*" 字符
+            params[key].toString().replace(chrFilter, '')
+        )}`
+    )
+  })
+  query = query.join('&')
+  const wbiSign = CryptoJS.MD5(query + mixinKey) // 计算 w_rid
+  return query + '&w_rid=' + wbiSign
+}
+
+async function getWbiKeys () {
+  const { data } = await $fetch.get('https://api.bilibili.com/x/web-interface/nav', headers)
+  const jsonContent = argsify(data)
+  const imgUrl = jsonContent.data.wbi_img.img_url
+  const subUrl = jsonContent.data.wbi_img.sub_url
+
+  return {
+    img_key: imgUrl.slice(
+      imgUrl.lastIndexOf('/') + 1,
+      imgUrl.lastIndexOf('.')
+    ),
+    sub_key: subUrl.slice(
+      subUrl.lastIndexOf('/') + 1,
+      subUrl.lastIndexOf('.')
+    )
+  }
+}
+
 async function search(ext) {
   const { text, page, type } = argsify(ext)
 
@@ -306,7 +354,43 @@ async function search(ext) {
   }
 
   if (!text.startsWith('BV')) {
-    return jsonify({})
+    if (type == 'playlist') {
+      return jsonify({})
+    }
+    let songs = []
+    const { img_key, sub_key } = await getWbiKeys()
+    $print(`***keys: ${img_key} , ${sub_key}`)
+    const query = encWbi({
+        keyword: text,
+      },
+      img_key,
+      sub_key
+    )
+    $print(`***query: ${query}`)
+    const { data } = await $fetch.get(`https://api.bilibili.com/x/web-interface/wbi/search/all/v2?${query}`, headers)
+    $print(`***data: ${data}`)
+    argsify(data).data?.result?.forEach( each => {
+      if (each?.result_type === 'video') {
+        each?.data.forEach( item => {
+          songs.push({
+            id: `${item.aid}`,
+            name: item.title.replace(/<[^>]*>/g, ''),
+            cover: 'https:' + item.pic,
+            duration: 0,
+            artist: {
+              id: `${item.mid}`,
+              name: item.author,
+              cover: item.upic
+            },
+            ext: {
+              aid: item.aid,
+              bvid: item.bvid
+            }
+          })
+        })
+      }
+    })
+    return jsonify({list: songs})
   }
 
   if (type == 'song') {
@@ -403,7 +487,13 @@ async function search(ext) {
 }
 
 async function getSongInfo(ext) {
-  const { aid, cid, bvid } = argsify(ext)
+  let { aid, cid } = argsify(ext)
+  
+  if (cid == undefined) {
+    const { data } = await $fetch.get(`https://api.bilibili.com/x/player/pagelist?aid=${aid}`, headers)
+    cid = argsify(data)?.data[0]?.cid ?? 0
+  }
+  
   let params = {
     avid: aid,
     cid: cid,
