@@ -48,7 +48,7 @@ const appConfig = {
     }, {
       "name": "国风歌单",
       "type": "playlist",
-      "ui": 0,
+      "ui": 1,
       "showMore": true,
       "ext": {
           "gid": '3'
