@@ -54,28 +54,12 @@ const appConfig = {
             "gid": '3'
         }
     }, {
-      "name": "流行歌单",
-      "type": "playlist",
-      "ui": 1,
-      "showMore": false,
-      "ext": {
-          "gid": '9'
-      }
-  }, {
       "name": "排行榜",
       "type": "playlist",
       "ui": 1,
       "showMore": true,
       "ext": {
           "gid": '4'
-      }
-    }, {
-      "name": "创作者",
-      "type": "artist",
-      "ui": 0,
-      "showMore": false,
-      "ext": {
-          "gid": '8'
       }
     }]
   },
@@ -90,9 +74,6 @@ const appConfig = {
     }, {
       "name": "专辑",
       "type": "album"
-    }, {
-      "name": "创作者",
-      "type": "artist"
     }]
   },
   "tabSearch": {
