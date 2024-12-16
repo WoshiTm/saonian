@@ -16,7 +16,7 @@ const appConfig = {
     "groups": [{
         "name": "推荐",
         "type": "song",
-        "ui": 1,
+        "ui": 0,
         "showMore": true,
         "ext": {
             "gid": '1'
@@ -24,7 +24,7 @@ const appConfig = {
     }, {
       "name": "白噪音",
       "type": "song",
-      "ui": 1,
+      "ui": 0,
       "showMore": true,
       "ext": {
           "gid": '6'
@@ -32,7 +32,7 @@ const appConfig = {
     }, {
         "name": "音单",
         "type": "album",
-        "ui": 1,
+        "ui": 0,
         "showMore": true,
         "ext": {
             "gid": '2'
@@ -40,7 +40,7 @@ const appConfig = {
     }, {
       "name": "播客",
       "type": "playlist",
-      "ui": 1,
+      "ui": 0,
       "showMore": true,
       "ext": {
           "gid": '7'
@@ -48,7 +48,7 @@ const appConfig = {
   }, {
         "name": "国风歌单",
         "type": "playlist",
-        "ui": 1,
+        "ui": 0,
         "showMore": true,
         "ext": {
             "gid": '3'
@@ -56,7 +56,7 @@ const appConfig = {
     }, {
       "name": "流行歌单",
       "type": "playlist",
-      "ui": 1,
+      "ui": 0,
       "showMore": true,
       "ext": {
           "gid": '9'
@@ -64,7 +64,7 @@ const appConfig = {
   }, {
       "name": "排行榜",
       "type": "playlist",
-      "ui": 1,
+      "ui": 0,
       "showMore": true,
       "ext": {
           "gid": '4'
