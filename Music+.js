@@ -38,20 +38,20 @@ const appConfig = {
           "gid": '9'
       }
   }, {
-      "name": "播客",
-      "type": "playlist",
-      "ui": 1,
-      "showMore": true,
-      "ext": {
-          "gid": '7'
-      }
-    }, {
       "name": "国风歌单",
       "type": "playlist",
       "ui": 1,
       "showMore": true,
       "ext": {
           "gid": '3'
+      }
+    }, {
+      "name": "播客",
+      "type": "playlist",
+      "ui": 1,
+      "showMore": true,
+      "ext": {
+          "gid": '7'
       }
     }]
   },
