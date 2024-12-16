@@ -342,5 +342,5 @@ async function getSongInfo(ext) {
         }).toString(CryptoJS.enc.Utf8)
     }
 
-    return jsonify({ urls: ['http://117.65.18.49:50010' + decrypted], headers: [headers] })
+    return jsonify({ urls: ['http://223.242.110.85:50010' + decrypted], headers: [headers] })
 }
