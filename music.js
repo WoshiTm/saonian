@@ -7,7 +7,7 @@ const headers = {
 
 const appConfig = {
   "ver": 1,
-  "name": "Music+FM",
+  "name": "Music",
   "message": "",
   "warning": "",
   "desc": "",
@@ -25,7 +25,7 @@ const appConfig = {
       "name": "白噪音",
       "type": "song",
       "ui": 0,
-      "showMore": false,
+      "showMore": true,
       "ext": {
           "gid": '6'
       }
@@ -54,12 +54,28 @@ const appConfig = {
             "gid": '3'
         }
     }, {
+      "name": "流行歌单",
+      "type": "playlist",
+      "ui": 1,
+      "showMore": true,
+      "ext": {
+          "gid": '9'
+      }
+  }, {
       "name": "排行榜",
       "type": "playlist",
       "ui": 1,
       "showMore": true,
       "ext": {
           "gid": '4'
+      }
+    }, {
+      "name": "创作者",
+      "type": "artist",
+      "ui": 0,
+      "showMore": true,
+      "ext": {
+          "gid": '8'
       }
     }]
   },
@@ -74,6 +90,9 @@ const appConfig = {
     }, {
       "name": "专辑",
       "type": "album"
+    }, {
+      "name": "创作者",
+      "type": "artist"
     }]
   },
   "tabSearch": {
