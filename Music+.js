@@ -33,7 +33,7 @@ const appConfig = {
       "name": "流行歌单",
       "type": "playlist",
       "ui": 1,
-      "showMore": false,
+      "showMore": true,
       "ext": {
           "gid": '9'
       }
@@ -49,7 +49,7 @@ const appConfig = {
       "name": "创作者",
       "type": "artist",
       "ui": 0,
-      "showMore": false,
+      "showMore": true,
       "ext": {
           "gid": '8'
       }
