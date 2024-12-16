@@ -24,7 +24,7 @@ const appConfig = {
   }, {
         "name": "创作者",
         "type": "artist",
-        "ui": 1,
+        "ui": 0,
         "showMore": true,
         "ext": {
             "gid": '8'
