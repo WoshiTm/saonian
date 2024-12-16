@@ -16,7 +16,7 @@ const appConfig = {
     "groups": [{
         "name": "推荐",
         "type": "song",
-        "ui": 0,
+        "ui": 1,
         "showMore": true,
         "ext": {
             "gid": '1'
@@ -24,7 +24,7 @@ const appConfig = {
     }, {
       "name": "白噪音",
       "type": "song",
-      "ui": 0,
+      "ui": 1,
       "showMore": true,
       "ext": {
           "gid": '6'
@@ -32,7 +32,7 @@ const appConfig = {
     }, {
         "name": "音单",
         "type": "album",
-        "ui": 0,
+        "ui": 1,
         "showMore": true,
         "ext": {
             "gid": '2'
