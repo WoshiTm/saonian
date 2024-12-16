@@ -14,6 +14,30 @@ const appConfig = {
   "tabLibrary": {
     "name": "探索",
     "groups": [{
+      "name": "排行榜",
+      "type": "playlist",
+      "ui": 1,
+      "showMore": true,
+      "ext": {
+          "gid": '4'
+      }
+  }, {
+        "name": "创作者",
+        "type": "artist",
+        "ui": 1,
+        "showMore": true,
+        "ext": {
+            "gid": '8'
+        }
+    }, {
+      "name": "流行歌单",
+      "type": "playlist",
+      "ui": 1,
+      "showMore": true,
+      "ext": {
+          "gid": '9'
+      }
+  }, {
       "name": "播客",
       "type": "playlist",
       "ui": 1,
@@ -21,21 +45,13 @@ const appConfig = {
       "ext": {
           "gid": '7'
       }
-  }, {
-        "name": "国风歌单",
-        "type": "playlist",
-        "ui": 1,
-        "showMore": true,
-        "ext": {
-            "gid": '3'
-        }
     }, {
-      "name": "排行榜",
+      "name": "国风歌单",
       "type": "playlist",
-      "ui": 1,
+      "ui": 0,
       "showMore": true,
       "ext": {
-          "gid": '4'
+          "gid": '3'
       }
     }]
   },
@@ -50,6 +66,9 @@ const appConfig = {
     }, {
       "name": "专辑",
       "type": "album"
+    }, {
+      "name": "创作者",
+      "type": "artist"
     }]
   },
   "tabSearch": {
