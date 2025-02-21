@@ -7,8 +7,8 @@
 "open_with_safari_flag":true,
 "category": [{
 			"title": "New Release",
-			"url0": "https://missav.ai/dm513/cn/new-release",
-			"url1": "https://missav.ai/dm513/cn/new-release?page={pg}"
+			"url0": "https://missav.ai/dm513/cn/new",
+			"url1": "https://missav.ai/dm513/cn/new?page={pg}"
 		}
 	],    
 "vod_node":"//div[contains(@class, 'box-item-list')]//div[@class='box-item']",
