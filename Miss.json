@@ -3,12 +3,12 @@
 "title":"missav",
 "episode_flag":false,
 "landscape_flag":true,
-"referer":"https://missav.pw/",
+"referer":"https://missav.ai/",
 "open_with_safari_flag":true,
 "category": [{
 			"title": "New Release",
-			"url0": "https://missav.pw/zh/dm2/new-release",
-			"url1": "https://missav.pw/zh/dm2/new-release?page={pg}"
+			"url0": "https://missav.ai/dm514/new",
+			"url1": "https://missav.ai/dm514/new?page={pg}"
 		}
 	],    
 "vod_node":"//div[contains(@class, 'box-item-list')]//div[@class='box-item']",
@@ -19,7 +19,7 @@
 "vod_image_regex":"",
 "vod_image_url":"{id}",
 "vod_link_id":"//div[@class='detail']/a/@href",
-"vod_link_url":"https://missav.pw/en/{id}",
+"vod_link_url":"https://missav.ai/{id}",
 "play_regex":"",
 "play_url":"{id}",
 "playlist_flag":false,
@@ -29,13 +29,13 @@
 "playlist_link_url":"",
 "playlist_info":"",
 "search_flag":true,
-"search_url_first_page":"https://missav.pw/en/search?keyword={wd}",
-"search_url_other_page":"https://missav.pw/en/search?keyword={wd}&page={pg}",
+"search_url_first_page":"https://missav.ai/search?keyword={wd}",
+"search_url_other_page":"https://missav.ai/search?keyword={wd}&page={pg}",
 "search_vod_node":"//div[contains(@class, 'box-item-list')]//div[@class='box-item']",
 "search_vod_title":"//div[@class='detail']/a",
 "search_vod_image_id":"//img/@data-src",
 "search_vod_image_regex":"",
 "search_vod_image_url":"{id}",
 "search_vod_link_id":"//div[@class='detail']/a/@href",
-"search_vod_link_url":"https://missav.pw/en/{id}"
+"search_vod_link_url":"https://missav.ai/{id}"
 }
