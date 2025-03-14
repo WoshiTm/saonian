@@ -20,6 +20,13 @@
   "vod_link_id": "//div[contains(@class, 'relative')]/a/@href",
   "vod_link_url": "{id}", 
   "open_with_safari_flag": true,
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Referer": "https://missav.ai/",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+  },
   "play_regex": "",
   "play_url": "{id}",
   "playlist_flag": false,
