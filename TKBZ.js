@@ -1,10 +1,10 @@
 
 /*
 [rewrite_local]
-https://smallatom.xyz/bz/img006/periodList url script-response-body https://raw.githubusercontent.com/WoshiTm/saonian/refs/heads/main/TKBZ.js
+https://cdxmhn.top/bz/img006/periodList url script-response-body https://raw.githubusercontent.com/WoshiTm/saonian/refs/heads/main/TKBZ.js
 
 [mitm]
-hostname = smallatom.xyz
+hostname = cdxmhn.top
 */
 
 var body = $response.body;
