@@ -1,0 +1,23 @@
+{
+"name":"图标库", 
+"description":"自用。", 
+"icons":
+    [
+	{"name":"Emby", "url":"https://s2.loli.net/2025/05/26/joaHWwJU3dDl8QT.png"},
+	{"name":"Emby1", "url":"https://s2.loli.net/2025/05/26/WAFwNJTG5Emh4Kf.png"},
+	{"name":"Emby2", "url":"https://s2.loli.net/2025/05/26/4Jb9TA8oWU3BxCw.png"},
+	{"name":"Emby3", "url":"https://s2.loli.net/2025/05/26/NzJ6rjU59smpTWg.png"},
+	{"name":"Emby4", "url":"https://s2.loli.net/2025/05/26/wAGeRacCYuTkMS5.png"},
+	{"name":"Emby5", "url":"https://s2.loli.net/2025/05/26/jDCl63ki8BNxpVt.png"},
+	{"name":"Emby6", "url":"https://s2.loli.net/2025/05/26/kx4sQPcZmgOoYwT.png"},
+	{"name":"Emby7", "url":"https://s2.loli.net/2025/05/26/fkKBjEQeIhF4WpN.png"},
+	{"name":"Emby8", "url":"https://s2.loli.net/2025/05/26/RPTYpbgvaKSuxci.png"},
+	{"name":"Emby9", "url":"https://s2.loli.net/2025/05/26/QNuRjUpxz7Yr3Bl.png"},
+	{"name":"Emby10", "url":"https://s2.loli.net/2025/05/26/evhHodVqNBD1n9E.png"},
+	{"name":"Emby11", "url":"https://s2.loli.net/2025/05/26/52qdE9hRHOlnXfK.png"},
+	{"name":"Emby12", "url":"https://s2.loli.net/2025/05/26/XyPaEMoWkQORrSm.png"},
+	{"name":"Emby13", "url":"https://s2.loli.net/2025/05/26/ifCScqvAudHa2Nn.png"},
+	{"name":"Emby14", "url":"https://s2.loli.net/2025/05/26/DhuRnQKFsogJx1S.png"},
+	{"name":"Emby15", "url":"https://s2.loli.net/2025/05/26/FN5we9oiGZQCERB.png"}	
+    ]
+}
