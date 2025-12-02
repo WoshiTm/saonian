@@ -954,7 +954,7 @@ async function getSongInfo(ext) {
   }
 
   if (qid != undefined) {
-    const { data } = await $fetch.get(`https://lc.guoyue2010.top/url/tx/${qid}/320k`, {
+    const { data } = await $fetch.get(`https://source.shiqianjiang.cn/url/tx/${qid}/320k`, {
         headers: {
             'X-Request-Key': 'share-v2',
         },
